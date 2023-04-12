@@ -52,8 +52,7 @@ const forLoopTwoToThe = (arr) => {
   // Solution code here...
   const result = [];
   for(let i in arr) {
-    const power = Math.pow(2, arr[i]);
-    result.push(power);
+    result.push(Math.pow(2, arr[i]));
   }
   return result;
 };
@@ -102,10 +101,6 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  const result = [];
-  arr.map((num) => {
-    
-  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,11 +118,11 @@ const evenOdd = (arr) => {
   const result = [];
   arr.map((num) => {
     if(num %2 === 0){
-      result.push("even");
+      result.push('even');
     }else if(num %2 === 1) {
-      result.push("odd");
+      result.push('odd');
     }else {
-      result.push("N/A")
+      result.push('N/A');
     }
   })
   return result;
