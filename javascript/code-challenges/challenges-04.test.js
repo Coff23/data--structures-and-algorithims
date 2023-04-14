@@ -91,7 +91,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 const alphabetize = (arr) => {
   // Solution code here...
   const newArr = arr.sort((a, b) => {
-    if (a.toUpperCase() < b.toUpperCase()) {
+    if (a > b) {
       return 1;
     } else {
       return -1;
