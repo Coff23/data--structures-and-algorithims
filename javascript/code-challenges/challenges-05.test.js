@@ -196,7 +196,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
-  return arr.reduce((accumulator, currentValue) => (accumulator * currentValue) / arr.length);
+  return arr.reduce((accumulator, currentValue) => (accumulator * currentValue, 0) / arr.length);
 };
 
 /* ------------------------------------------------------------------------------------------------
