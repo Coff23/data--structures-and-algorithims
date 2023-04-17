@@ -183,6 +183,7 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator, currentValue) => currentValue.children, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -195,6 +196,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator, currentValue) => (accumulator * currentValue, 0) / arr.length);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -334,7 +336,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
