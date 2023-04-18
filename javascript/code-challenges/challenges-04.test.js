@@ -274,7 +274,7 @@ const sortMeetingsByDay = (arr) => {
     "Friday": 5,
   };
   const newArr = arr.sort((a, b) => {
-    if(sorter[a.day] > sorter[b.day]) {
+    if(sorter[a.day] < sorter[b.day]) {
       return 1;
     }else {
       return -1;
