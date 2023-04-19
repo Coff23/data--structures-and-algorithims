@@ -134,14 +134,9 @@ const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
   recipe.ingredients.forEach((ingredient) => {
-    const firstSpaceIndex = ingredient.indexOf(' ');
-    const foodName = ingredient.slice(firstSpaceIndex + 1);
-    const unitIndex = foodName.indexOf(' ');
-    if (unitIndex !== -1) {
-      result.push(foodName.slice(unitIndex + 1));
-    } else {
-      result.push(foodName);
-    }
+    let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnit = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
+    result.push(withoutUnit);
   });
   return result;
 };
