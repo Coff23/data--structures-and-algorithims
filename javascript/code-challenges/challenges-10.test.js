@@ -48,7 +48,12 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
-
+  let total = 0;
+  let singleArr = matrix.flat();
+  singleArr.forEach(number => {
+    total += number;
+  });
+  return total;
 };
 
 
@@ -76,7 +81,15 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  const totalArr = [];
+  for(let i = 0; i < hoursOpen.length; i++) {
+    let sum = 0;
+    for(let j = 0; j < stores.length; j++) {
+      sum += stores [j][i];
+    }
+    totalArr.push(sum);
+  }
+  return totalArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +104,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const salesArr = [];
+  hours.forEach((hour, index) => salesArr.push({ sales: `${data[index]} cookies`, time: hour}));
+  return salesArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +132,12 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i].store === 'Pet store'){
+      const treats = arr[i].items.find(item => item.name === 'Treats').quantity;
+      return treats;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
