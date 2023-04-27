@@ -159,6 +159,11 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  const foundCharacter = arr.entries(character).find(c => c.name === character);
+  if(!foundCharacter || !foundCharacter.children || Object.jeys(foundCharacter.children).length === 0) {
+    return false;
+  }
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -277,7 +282,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
