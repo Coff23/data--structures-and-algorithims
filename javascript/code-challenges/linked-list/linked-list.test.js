@@ -1,5 +1,6 @@
 'use strict';
 
+const { find } = require('cheerio/lib/api/traversing');
 const LinkedList = require('./index');
 
 describe('Linked List', () => {
@@ -27,10 +28,31 @@ describe('Linked List', () => {
     list.insert(1);
 
     expect(list.head.value).toEqual(1);
-    expect(list.head.next).toEqual(2);
+    expect(list.head.next.value).toEqual(2);
     expect(list.head.next.next).toBeNull;
     list.append('a');
     expect(list.head.next.next.value).toEqual('a');
+    expect(list.find(2)).toStrictEqual(true);
+    expect(list.find(77)).toStrictEqual(false);
+  });
+
+  test('traversal with values', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+    list.append('c');
+    list.append('d');
+
+    list.traversal();
+
+    expect(list).toEqual({'head':{'value':'a','next':{'value':'b','next':{'value':'c','next':{'value':'d','next':null}}}}});
+  });
+
+  test('traversal without values', () => {
+    const list = new LinkedList();
+    list.traversal();
+
+    expect(list).toBeNull;
   });
 
 });

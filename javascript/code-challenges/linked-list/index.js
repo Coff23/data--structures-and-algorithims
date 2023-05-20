@@ -21,7 +21,8 @@ class LinkedList {
   append(value) {
     let node = new Node(value);
     if(!this.head) {
-      this.head =node;
+      this.head = node;
+      return;
     }
     let current = this.head;
 
@@ -39,6 +40,18 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  find(value) {
+    let current = this.head;
+
+    while(current) {
+      if(current.value === value) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
 }
 
 let list = new LinkedList();
@@ -47,8 +60,6 @@ list.append('b');
 list.append('c');
 list.append('d');
 
-console.log(list);
+console.log(JSON.stringify(list));
 
-module.exports = {
-  LinkedList
-};
+module.exports = LinkedList;
