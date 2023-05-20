@@ -1,6 +1,5 @@
 'use strict';
 
-const { find } = require('cheerio/lib/api/traversing');
 const LinkedList = require('./index');
 
 describe('Linked List', () => {
