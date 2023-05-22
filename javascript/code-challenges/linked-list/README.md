@@ -22,6 +22,7 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
+![Whiteboard](../assets/challenge-06-whiteboard.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -30,3 +31,6 @@ Approach was write out a function with console logs and then run tests to see wh
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 ![Solution](../assets/solution-linked-list-setup.png)
+
+### Solution for Challenge 06
+![Solution 06](../assets/solution-06.png)
