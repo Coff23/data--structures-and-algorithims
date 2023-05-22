@@ -79,7 +79,7 @@ describe('Linked List', () => {
     list.append(3);
     list.append('d');
 
-    expect(list.toStr()).toStrictEqual("{ a } -> { b } -> { 3 } -> { d } -> NULL");
+    expect(list.toStr()).toStrictEqual('{ a } -> { b } -> { 3 } -> { d } -> NULL');
   });
 
 });
