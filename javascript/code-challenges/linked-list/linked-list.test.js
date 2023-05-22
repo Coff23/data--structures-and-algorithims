@@ -43,6 +43,10 @@ describe('Linked List', () => {
     list.traversal();
 
     expect(list).toEqual({'head':{'value':'a','next':{'value':'b','next':{'value':'c','next':{'value':'d','next':null}}}}});
+    list.insertBefore(5, 'c');
+    expect(list.head.next.next.value).toEqual(5);
+    list.insertAfter(2, 'a');
+    expect(list.head.next.value).toEqual(2);
   });
 
   test('traversal without values', () => {

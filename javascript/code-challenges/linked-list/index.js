@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
@@ -18,15 +18,64 @@ class LinkedList {
     this.head = node;
   }
 
+  insertBefore(value, target) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      return;
+    }
+    if (this.head.value === target) {
+      node.next = this.head;
+      this.head = node;
+      return;
+    }
+
+    let currentNode = this.head;
+    let prevNode = null;
+
+    while (currentNode) {
+      if (currentNode.value === target) {
+        node.next = currentNode;
+        prevNode.next = node;
+        return;
+      }
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    prevNode.next = node;
+  }
+
+  insertAfter(value, target) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.value === target) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return;
+      }
+      currentNode = currentNode.next;
+    }
+
+    currentNode.next = newNode;
+  }
+
   append(value) {
     let node = new Node(value);
-    if(!this.head) {
+    if (!this.head) {
       this.head = node;
       return;
     }
     let current = this.head;
 
-    while(current.next){
+    while (current.next) {
       current = current.next;
     }
     current.next = node;
@@ -35,7 +84,7 @@ class LinkedList {
   traversal() {
     let current = this.head;
 
-    while(current){
+    while (current) {
       console.log(current.value);
       current = current.next;
     }
@@ -44,17 +93,17 @@ class LinkedList {
   find(value) {
     let current = this.head;
 
-    while(current) {
-      if(current.value === value) return true;
+    while (current) {
+      if (current.value === value) return true;
       current = current.next;
     }
     return false;
   }
 
-  toStr(){
+  toStr() {
     let result = '';
     let current = this.head;
-    while(current) {
+    while (current) {
       result += `{ ${current.value} } -> `;
       current = current.next;
     }
