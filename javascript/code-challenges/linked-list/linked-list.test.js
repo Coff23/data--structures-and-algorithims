@@ -31,8 +31,6 @@ describe('Linked List', () => {
     expect(list.head.next.next).toBeNull;
     list.append('a');
     expect(list.head.next.next.value).toEqual('a');
-    expect(list.find(2)).toStrictEqual(true);
-    expect(list.find(77)).toStrictEqual(false);
   });
 
   test('traversal with values', () => {
@@ -52,6 +50,36 @@ describe('Linked List', () => {
     list.traversal();
 
     expect(list).toBeNull;
+  });
+
+  test('includes value', () => {
+    const list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+
+    expect(list.find(2)).toStrictEqual(true);
+  });
+
+  test('value not included', () => {
+    const list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+
+    expect(list.find(77)).toStrictEqual(false);
+  });
+
+  test('toStr', () => {
+    const list = new LinkedList;
+    list.append('a');
+    list.append('b');
+    list.append(3);
+    list.append('d');
+
+    expect(list.toStr()).toStrictEqual("{ a } -> { b } -> { 3 } -> { d } -> NULL");
   });
 
 });
