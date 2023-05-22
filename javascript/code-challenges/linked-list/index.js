@@ -50,6 +50,18 @@ class LinkedList {
     }
     return false;
   }
+
+  toStr(){
+    let result = '';
+    let current = this.head;
+    while(current) {
+      result += `{ ${current.value} } -> `;
+      current = current.next;
+    }
+    result += 'NULL';
+
+    return result;
+  }
 }
 
 let list = new LinkedList();

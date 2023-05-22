@@ -72,4 +72,14 @@ describe('Linked List', () => {
     expect(list.find(77)).toStrictEqual(false);
   });
 
+  test('toStr', () => {
+    const list = new LinkedList;
+    list.append('a');
+    list.append('b');
+    list.append(3);
+    list.append('d');
+
+    expect(list.toStr()).toStrictEqual("{ a } -> { b } -> { 3 } -> { d } -> NULL");
+  });
+
 });
