@@ -45,9 +45,7 @@ class LinkedList {
     let current = this.head;
 
     while(current) {
-      if(current.value === value) {
-        return true;
-      }
+      if(current.value === value) return true;
       current = current.next;
     }
     return false;
