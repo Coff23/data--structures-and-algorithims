@@ -22,7 +22,9 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![Whiteboard](../assets/challenge-06-whiteboard.png)
+![Whiteboard 06](../assets/challenge-06-whiteboard.png)
+
+![Whiteboard 07](../assets/whiteboard-07.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -34,3 +36,6 @@ Approach was write out a function with console logs and then run tests to see wh
 
 ### Solution for Challenge 06
 ![Solution 06](../assets/solution-06.png)
+
+## Solution for challenge 07
+![Solution 07](../assets/solution-07.png)

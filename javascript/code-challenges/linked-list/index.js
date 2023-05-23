@@ -111,6 +111,21 @@ class LinkedList {
 
     return result;
   }
+
+  kthFromEnd(k) {
+    let p1 = this.head;
+    let p2 = this.head;
+
+    for(let i = 0; i < k; i++) {
+      if(p2 === null) return null;
+      p2 = p2.next;
+    }
+    while(p2 !== null && p2.next !== null) {
+      p1 = p1.next;
+      p2 = p2.next;
+    }
+    return p1.value;
+  }
 }
 
 let list = new LinkedList();
