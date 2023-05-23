@@ -47,6 +47,8 @@ describe('Linked List', () => {
     expect(list.head.next.next.value).toEqual(5);
     list.insertAfter(2, 'a');
     expect(list.head.next.value).toEqual(2);
+    list.kthFromEnd(0);
+    expect(list.head.next.next.next.next.next.value).toEqual('d');
   });
 
   test('traversal without values', () => {
@@ -84,6 +86,12 @@ describe('Linked List', () => {
     list.append('d');
 
     expect(list.toStr()).toStrictEqual('{ a } -> { b } -> { 3 } -> { d } -> NULL');
+  });
+
+  test('kth from the end null', () => {
+    const list = new LinkedList();
+
+    expect(list.kthFromEnd(2)).toBeNull;
   });
 
 });
