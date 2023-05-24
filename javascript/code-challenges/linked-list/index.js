@@ -116,17 +116,46 @@ class LinkedList {
     let p1 = this.head;
     let p2 = this.head;
 
-    for(let i = 0; i < k; i++) {
-      if(p2 === null) return null;
+    for (let i = 0; i < k; i++) {
+      if (p2 === null) return null;
       p2 = p2.next;
     }
-    while(p2 !== null && p2.next !== null) {
+    while (p2 !== null && p2.next !== null) {
       p1 = p1.next;
       p2 = p2.next;
     }
     return p1.value;
   }
+
+  static zipLists(list1, list2) {
+    const zippedList = new LinkedList();
+    let current1 = list1.head;
+    let current2 = list2.head;
+
+    while (current1 !== null && current2 !== null) {
+      zippedList.append(current1.value);
+      zippedList.append(current2.value);
+
+      current1 = current1.next;
+      current2 = current2.next;
+
+    }
+
+    while (current1 !== null) {
+      zippedList.append(current1.value);
+      current1 = current1.next;
+    }
+
+    while (current2 !== null) {
+      zippedList.append(current2.value);
+      current2 = current2.next;
+    }
+
+    return zippedList;
+  }
+
 }
+
 
 let list = new LinkedList();
 list.append('a');
