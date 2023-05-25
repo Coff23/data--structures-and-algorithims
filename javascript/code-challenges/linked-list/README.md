@@ -26,6 +26,8 @@ Returns: a string representing all the values in the Linked List, formatted as:
 
 ![Whiteboard 07](../assets/whiteboard-07.png)
 
+![Whiteboard 08](../assets/whiteboard08.png)
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Approach was write out a function with console logs and then run tests to see where I stood in relativity to the answers that I was trying to get.
@@ -39,3 +41,6 @@ Approach was write out a function with console logs and then run tests to see wh
 
 ## Solution for challenge 07
 ![Solution 07](../assets/solution-07.png)
+
+## Solution for challenge 08
+![Solution 08](../assets/solution-08.png)
