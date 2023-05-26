@@ -154,6 +154,21 @@ class LinkedList {
     return zippedList;
   }
 
+  reverseLinkedList(list) {
+    let PREVIOUS = null;
+    let CURRENT = this.head;
+
+    while (CURRENT !== null) {
+      let NEXT = CURRENT.next;
+      CURRENT.next = PREVIOUS;
+      PREVIOUS = CURRENT;
+      CURRENT = NEXT;
+    }
+
+    this.head = PREVIOUS;
+    return list;
+  }
+
 }
 
 

@@ -116,4 +116,16 @@ describe('Linked List', () => {
 
   });
 
+  test('reverse', () => {
+    let list = new LinkedList();
+
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    let reversedList = LinkedList.reverseLinkedList(list);
+
+    expect(reversedList.toStr()).toEqual('{ 3 } -> { 2 } -> { 1 } -> NULL');
+  });
+
 });
