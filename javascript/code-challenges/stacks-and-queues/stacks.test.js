@@ -37,4 +37,19 @@ describe('Stack test', () => {
 
     expect(stack.top.value).toEqual(1);
   });
+
+  it('Peek test', () => {
+    let stack = new Stack();
+
+    stack.push(1);
+    stack.push(2);
+
+    expect(stack.peek()).toEqual(2);
+  });
+
+  it('Empty stack test', () => {
+    let stack = new Stack();
+
+    expect(stack.isEmpty()).toBeTruthy;
+  });
 });
