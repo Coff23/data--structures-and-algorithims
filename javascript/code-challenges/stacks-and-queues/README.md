@@ -2,6 +2,12 @@
 
 ## Whiteboard Process
 
+![Challenge 11](../assets/challenge-11.png)
+
 ## Approach and Efficiency
 
+Break down the problem and reflect on what we learned friday and imppliment code that worked for this situation and problem
+
 ## Solution
+
+![Solution 11](../assets/solution-11.png)
