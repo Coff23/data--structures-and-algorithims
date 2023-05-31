@@ -44,7 +44,7 @@ class Queue {
 
   enqueue(value) {
     let newNode = new Node(value);
-    if(this.front) {
+    if (this.front) {
       this.back.next = newNode;
     } else {
       this.front = newNode;
@@ -54,9 +54,9 @@ class Queue {
 
   dequeue() {
     let removedValue = null;
-    if(this.front) {
+    if (this.front) {
       removedValue = this.front.value;
-      if(this.front === this.back) {
+      if (this.front === this.back) {
         this.back = null;
       }
       this.front = this.front.next;
@@ -64,8 +64,64 @@ class Queue {
     return removedValue;
   }
 
-  peek(){
-    if(this.front !== null){
+  peek() {
+    if (this.front !== null) {
+      return this.front.value;
+    } else {
+      return null;
+    }
+  }
+
+  isEmpty() {
+    return this.front === null;
+  }
+}
+
+class AnimalShelter {
+  constructor() {
+    this.front = null;
+    this.back = null;
+  }
+
+  enqueueAnimal(species, name) {
+    let newNode = new Node(species, name);
+    if (this.front) {
+      this.back = newNode;
+    } else {
+      this.front = newNode;
+    }
+    this.back = newNode;
+  }
+
+  dequeueAnimal(pref) {
+    let wantedAnimal = null;
+    let currentAnimal = this.front;
+
+    // if (currentAnimal.species === pref) {
+    //   wantedAnimal = currentAnimal.name;
+    //   this.front = currentAnimal.next;
+    //   if (!this.front) {
+    //     this.back = null;
+    //   }
+    // } else {
+    while (currentAnimal.next) {
+      if (currentAnimal.next.species === pref) {
+        wantedAnimal = currentAnimal.next.name;
+        currentAnimal.next = currentAnimal.next.next;
+        if (!currentAnimal.next) {
+          this.back = currentAnimal;
+        }
+        break;
+      }
+      currentAnimal = currentAnimal.next;
+    }
+    return wantedAnimal;
+  }
+
+  // }
+
+  peek() {
+    if (this.front !== null) {
       return this.front.value;
     } else {
       return null;
@@ -80,4 +136,5 @@ class Queue {
 module.exports = {
   Stack,
   Queue,
+  AnimalShelter,
 };

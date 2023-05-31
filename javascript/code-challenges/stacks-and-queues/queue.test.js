@@ -1,6 +1,6 @@
 'use strict';
 
-const { Queue } = require('./index');
+const { Queue, AnimalShelter } = require('./index');
 
 describe('Queue test', () => {
   it('Enqueue test', () => {
@@ -60,5 +60,16 @@ describe('Queue test', () => {
     let queue = new Queue();
     expect(queue.dequeue()).toBeNull();
     expect(queue.peek()).toBeNull();
+  });
+});
+
+describe('Animal Shelter Tests', () => {
+  it('Enqueue test', () => {
+    let queue = new AnimalShelter();
+
+    queue.enqueueAnimal('Cat', 'Garfield');
+
+    expect(queue.isEmpty()).toBe(false);
+    expect(queue.front.species).toEqual('Cat');
   });
 });
