@@ -52,4 +52,11 @@ describe('Stack test', () => {
 
     expect(stack.isEmpty()).toBeTruthy;
   });
+
+  it('Brackets', () => {
+    let stack = new Stack();
+
+    expect(stack.validateBrackets('({)')).toEqual(false);
+    expect(stack.validateBrackets('({[]})')).toEqual(true);
+  });
 });
