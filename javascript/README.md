@@ -91,3 +91,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 - [Array Binary Search](./code-challenges/array-binary-search/README.md)
 - [Linked-List](./code-challenges/linked-list/README.md)
 - [Stacks and Queues](./code-challenges/stacks-and-queues/README.md)
+- [Trees](./code-challenges/trees/README.md)
