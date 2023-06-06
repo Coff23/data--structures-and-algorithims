@@ -56,6 +56,21 @@ class BinaryTree {
 
     return [...leftTraversal, ...currentNode, ...rightTraversal];
   }
+
+  findMax(node = this.root) {
+    if (node === null)
+      return Number.MIN_VALUE;
+
+    let curr = node.value;
+    let leftTraversal = this.findMax(node.left);
+    let rightTraversal = this.findMax(node.right);
+
+    if (leftTraversal > curr)
+      curr = leftTraversal;
+    if (rightTraversal > curr)
+      curr = rightTraversal;
+    return curr;
+  }
 }
 
 let tree = new BinaryTree();
@@ -69,7 +84,9 @@ tree.root.right.right = new Node(17);
 let preResults = tree.preOrder();
 let postResults = tree.postOrder(tree.root);
 let results = tree.inOrder();
+let maxResult = tree.findMax();
 
+console.log('max', maxResult);
 console.log('preorder', preResults);
 console.log('postOrder', postResults);
 console.log('in order', results);
