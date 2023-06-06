@@ -45,6 +45,8 @@ describe('Binary tree testing', () => {
     tree.root.left = new Node(5);
     tree.root.right = new Node(15);
 
-    expect(tree.postOrder).toBeTruthy;
+    expect(tree.postOrder()).toEqual([5, 15, 10]);
+    expect(tree.preOrder()).toEqual([10, 5, 15]);
+    expect(tree.inOrder()).toEqual([5, 10, 15]);
   });
 });

@@ -19,10 +19,10 @@ class BinaryTree {
     const traverse = (node) => {
       results.push(node.value);
 
-      if(node.left) {
+      if (node.left) {
         traverse(node.left);
       }
-      if(node.right) {
+      if (node.right) {
         traverse(node.right);
       }
     };
@@ -30,18 +30,31 @@ class BinaryTree {
     return results;
   }
 
-  postOrder() {
+  postOrder(node = this.root) {
     const results = [];
 
     const traverse = (node) => {
-      results.push(node.value);
-
-      if(node.left) traverse(node.left);
-      if(node.right) traverse(node.right);
-      results.push(node.value);
+      if (node !== null) {
+        traverse(node.left);
+        traverse(node.right);
+        results.push(node.value);
+      }
     };
-    traverse(this.root);
+
+    traverse(node);
     return results;
+  }
+
+  inOrder(node = this.root) {
+    if (node === null) {
+      return [];
+    }
+
+    const leftTraversal = this.inOrder(node.left);
+    const currentNode = [node.value];
+    const rightTraversal = this.inOrder(node.right);
+
+    return [...leftTraversal, ...currentNode, ...rightTraversal];
   }
 }
 
@@ -54,9 +67,11 @@ tree.root.left.right = new Node(8);
 tree.root.right.right = new Node(17);
 
 let preResults = tree.preOrder();
-let postResults = tree.postOrder();
+let postResults = tree.postOrder(tree.root);
+let results = tree.inOrder();
 
 console.log('preorder', preResults);
 console.log('postOrder', postResults);
+console.log('in order', results);
 
-module.exports = {BinaryTree, Node};
+module.exports = { BinaryTree, Node };
