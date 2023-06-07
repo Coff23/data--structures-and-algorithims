@@ -49,5 +49,6 @@ describe('Binary tree testing', () => {
     expect(tree.preOrder()).toEqual([10, 5, 15]);
     expect(tree.inOrder()).toEqual([5, 10, 15]);
     expect(tree.findMax()).toEqual(15);
+    expect(tree.breadthFirst()).toEqual([10, 5, 15]);
   });
 });

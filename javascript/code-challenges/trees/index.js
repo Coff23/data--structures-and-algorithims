@@ -71,6 +71,30 @@ class BinaryTree {
       curr = rightTraversal;
     return curr;
   }
+
+  breadthFirst() {
+    if (!this.root) {
+      return [];
+    }
+
+    const queue = [this.root];
+    const results = [];
+
+    while (queue.length > 0) {
+      const node = queue.shift();
+      results.push(node.value);
+
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
+      }
+    }
+
+    return results;
+  }
+
 }
 
 let tree = new BinaryTree();
@@ -85,7 +109,9 @@ let preResults = tree.preOrder();
 let postResults = tree.postOrder(tree.root);
 let results = tree.inOrder();
 let maxResult = tree.findMax();
+let bfs = tree.breadthFirst();
 
+console.log('bfs', bfs);
 console.log('max', maxResult);
 console.log('preorder', preResults);
 console.log('postOrder', postResults);
