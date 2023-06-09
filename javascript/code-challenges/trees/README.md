@@ -4,6 +4,7 @@
 
 ![Challenge 16](../assets/whiteboard-16.png)
 ![Challenge 17](../assets/whiteboard-17.png)
+![Challenge 18](../assets/whiteboard-18.png)
 
 ## Approach and Efficiency
 

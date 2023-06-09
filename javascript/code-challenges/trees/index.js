@@ -8,6 +8,14 @@ class Node {
   }
 }
 
+class TreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
 class BinaryTree {
   constructor() {
     this.root = null;
@@ -95,6 +103,30 @@ class BinaryTree {
     return results;
   }
 
+  fizzBuzzTree(node) {
+    if (!node) { // Base case: empty node
+      return null;
+    }
+
+    const newTree = new TreeNode(); // Create a new tree node
+
+    // Check if the value of the current node is divisible by 3, 5, or both
+    if (node.value % 3 === 0 && node.value % 5 === 0) {
+      newTree.value = 'FizzBuzz';
+    } else if (node.value % 3 === 0) {
+      newTree.value = 'Fizz';
+    } else if (node.value % 5 === 0) {
+      newTree.value = 'Buzz';
+    } else {
+      newTree.value = node.value.toString(); // Convert the number to a string
+    }
+
+    // Recursively process the children of the current node
+    newTree.left = this.fizzBuzzTree(node.left);
+    newTree.right = this.fizzBuzzTree(node.right);
+
+    return newTree;
+  }
 }
 
 let tree = new BinaryTree();
@@ -110,7 +142,10 @@ let postResults = tree.postOrder(tree.root);
 let results = tree.inOrder();
 let maxResult = tree.findMax();
 let bfs = tree.breadthFirst();
+let fizz = tree.fizzBuzzTree(tree.root);
 
+
+console.log('fizz', fizz);
 console.log('bfs', bfs);
 console.log('max', maxResult);
 console.log('preorder', preResults);
