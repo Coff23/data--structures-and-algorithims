@@ -92,4 +92,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 - [Linked-List](./code-challenges/linked-list/README.md)
 - [Stacks and Queues](./code-challenges/stacks-and-queues/README.md)
 - [Trees](./code-challenges/trees/README.md)
-- [insertionSort](./code-challenges/sorting/README.md)
+- [Sorting](./code-challenges/sorting/README.md)
