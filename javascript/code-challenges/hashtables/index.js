@@ -49,6 +49,31 @@ class HashTable {
     return results;
   }
 
+  repeatedWord(string) {
+    // Convert the string to lowercase and remove any punctuation
+    const cleanedString = string.toLowerCase().replace(/[^\w\s]/g, '');
+
+    // Split the string into individual words
+    const words = cleanedString.split(' ');
+
+    // Create an empty hashmap to store word occurrences
+    const wordOccurrences = new Map();
+
+    // Iterate through each word in the string
+    for (let word of words) {
+      // If the word is already in the hashmap, it is repeated
+      if (wordOccurrences.has(word)) {
+        return word;
+      }
+      // Otherwise, add the word to the hashmap with an initial count of 1
+      wordOccurrences.set(word, 1);
+    }
+
+    // If no repeated word is found, return null or an appropriate message
+    return null;
+  }
+
+
 }
 
 module.exports = HashTable;
