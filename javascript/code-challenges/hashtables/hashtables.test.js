@@ -123,4 +123,22 @@ describe('HashTable testing', () => {
     expect(value).toBeUndefined();
   });
 
+  it('should find the first repeated word in a string', () => {
+    const table = new HashTable(1024);
+    const string = 'Hello world hello';
+    const expected = 'hello';
+
+    const result = table.repeatedWord(string);
+    expect(result).toEqual(expected);
+  });
+
+  it('no string repeats should return null', () => {
+    const table = new HashTable(1024);
+    const string = 'Hello world yo';
+    const expected = null;
+
+    const result = table.repeatedWord(string);
+    expect(result).toEqual(expected);
+  });
+
 });
