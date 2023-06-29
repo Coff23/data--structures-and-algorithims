@@ -5,6 +5,10 @@ This is a code challenge that involves finding the common values between two bin
 
 Joshua Coffey
 
+## Whiteboard
+
+![Whiteboard](../assets/challenge32.png)
+
 ## Collaborators
 
 - Nick Mullaney: Helped with completing this assignment.
