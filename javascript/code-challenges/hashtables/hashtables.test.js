@@ -142,3 +142,55 @@ describe('HashTable testing', () => {
   });
 
 });
+
+describe('HashTable', () => {
+  describe('leftJoin', () => {
+    it('should perform a left join on two hashmaps correctly', () => {
+      const hashTable = new HashTable(10);
+
+      const hashmap1 = {
+        'apple': 'fruit',
+        'carrot': 'vegetable',
+        'banana': 'fruit'
+      };
+
+      const hashmap2 = {
+        'apple': 'red',
+        'carrot': 'orange'
+      };
+
+      const expectedJoinResult = [
+        ['apple', 'fruit', 'red'],
+        ['carrot', 'vegetable', 'orange'],
+        ['banana', 'fruit', null]
+      ];
+
+      const actualJoinResult = hashTable.leftJoin(hashmap1, hashmap2);
+      expect(actualJoinResult).toEqual(expectedJoinResult);
+    });
+
+    it('should handle cases where hashmap2 has no matching keys correctly', () => {
+      const hashTable = new HashTable(10);
+
+      const hashmap1 = {
+        'apple': 'fruit',
+        'carrot': 'vegetable',
+        'banana': 'fruit'
+      };
+
+      const hashmap2 = {};
+
+      const expectedJoinResult = [
+        ['apple', 'fruit', null],
+        ['carrot', 'vegetable', null],
+        ['banana', 'fruit', null]
+      ];
+
+      const actualJoinResult = hashTable.leftJoin(hashmap1, hashmap2);
+      expect(actualJoinResult).toEqual(expectedJoinResult);
+    });
+
+    // Add more test cases as needed
+
+  });
+});
