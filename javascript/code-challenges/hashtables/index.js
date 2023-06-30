@@ -73,6 +73,16 @@ class HashTable {
     return null;
   }
 
+  leftJoin(hashmap1, hashmap2) {
+    const result = [];
+
+    for (let key in hashmap1) {
+      const row = [key, hashmap1[key], hashmap2[key] || null];
+      result.push(row);
+    }
+
+    return result;
+  }
 
 }
 
