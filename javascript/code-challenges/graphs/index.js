@@ -38,6 +38,10 @@ class Graph{
     return iterator;
   }
 
+  size(){
+    return this.adjacencyList.size;
+  }
+
   breadthFirst(root, callback){
     const queue = [root];
     const visited = new Set();
@@ -111,4 +115,6 @@ graph.addDirectedEdge(C, H);
 
 console.log('does this work?', graph.getVerticies());
 console.log('neighbors?', graph.getNeighbors(A));
-console.log(graph.breadthFirst());
+graph.breadthFirst(A, console.log);
+graph.depthFirst(A, console.log);
+
