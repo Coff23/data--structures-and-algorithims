@@ -80,7 +80,7 @@ From the `data-structures-and-algorithms/javascript` folder, execute the followi
 - **Run a test for a data structure** - `npm test linked-list`
 - **Run a test for a specific challenge** - `npm test reverse-ll`
 
-#### Live Tests
+### Live Tests
 
 Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
 
@@ -95,3 +95,4 @@ Note that when you check your code into GitHub, all of your tests will automatic
 - [Sorting](./code-challenges/sorting/README.md)
 - [Hash Tables](./code-challenges/hashtables/README.md)
 - [Intersection](./code-challenges/treeIntersection/README.md)
+- [Final-Whiteboard](./code-challenges/final-whiteboard/README.md)
